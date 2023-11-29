@@ -57,6 +57,12 @@
     text-align: center;
 }
 
+.navButton:hover {
+    background-color: grey;
+    border-color: grey;
+    text-emphasis-color: #fd7702;
+}
+
 .pageTitle {
     text-decoration: none;
     transition: color 0.3s;
@@ -105,5 +111,110 @@
     display: block;
     margin: 20px auto auto 30px;
     width: 45%;
+}
+
+#newsStoriesContainer {
+    display: block;
+    margin: 50px auto auto auto;
+}
+
+.storyContainer {
+    display: flex;
+    margin: 100px auto auto auto;
+    width: 85%;
+    background-color: #0b5395;
+    border-style: solid;
+    border-color: #0b5395;
+    border-width: 25px;
+    border-radius: 5px;
+}
+
+.newsStoryImage {
+    width: 200px;
+    border-radius: 5px;
+}
+
+.titleAndContentContainer {
+    margin: auto auto auto 30px;
+}
+
+.storyLink {
+    text-decoration: none;
+    font-size: 2em;
+    transition: color 0.3s;
+}
+
+.storyLink:hover {
+    color: white;
+} 
+
+#weatherDataContainer {
+    width: 82%;
+    display: block;
+    margin: auto;
+}
+
+.locationSpecificDataContainer {
+    display: block;
+    margin: auto;
+    background-color: #0b5395;
+    border-radius: 5px;
+    height: 300px;
+}
+
+.topHalf {
+    display: flex;
+    margin: 50px auto auto auto;
+}
+
+.weatherIcon {
+    width: 150px;
+    border-radius: 5px;
+}
+
+.bottomHalf {
+    display: block;
+    margin: auto 50px auto auto;
+}
+
+.spaceSideways {
+    margin: auto 30px auto 30px;
+}
+
+.spaceTopways {
+    margin: 50px auto auto auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.dayContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.dateContainer {
+    width: 200px;
+    border: 3px black solid;
+    border-radius: 5px;
+}
+
+#holidaysContainer {
+    display: block;
+    margin: auto;
+    width: 85%;
+}
+
+.dateCode {
+    text-align: center;
+}
+
+.monthContainer {
+    margin: 200px auto auto auto;
+}
+
+.monthName {
+    text-align: center;
 }
 
