@@ -1,3 +1,7 @@
+
+/*
+General class inserts
+*/
 .font{
     font-family: sans-serif;
 }
@@ -14,6 +18,19 @@
     color: white;
 }
 
+.center {
+    text-align: center;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+/*
+-----------------------------------------------------------------
+This is for the header element that is that top of every page
+(i.e. the logo, title, nav bar, etc.)
+*/
 #header {
     display: flex;
     width: 80%;
@@ -81,14 +98,29 @@
     margin: 100px auto auto auto;
 }
 
+@media (max-width: 1000px) {
+    #titleContainer {
+        display: none;
+    }
+
+    #navBar {
+        display: block;
+    }
+
+    .navButton {
+        width: 25%;
+        margin: 25px auto auto auto;
+    }
+}
+
+/*
+-----------------------------------------------------------------
+This is for the home page content
+*/
 #teamTitleContainer {
     margin: 100px auto auto auto;
     display: block;
     width: 75%;
-}
-
-#ourTeam {
-    text-decoration: underline;
 }
 
 #teamMembersContainer {
@@ -113,6 +145,23 @@
     width: 45%;
 }
 
+@media (max-width: 1000px) {
+    .headshot {
+        height: 285px;
+    }
+
+    .bio {
+        display: block;
+    }
+
+    .bioText {
+        width: 65%;
+    }
+}
+/*
+-----------------------------------------------------------------
+This is for the news page content
+*/
 #newsStoriesContainer {
     display: block;
     margin: 50px auto auto auto;
@@ -148,6 +197,16 @@
     color: white;
 } 
 
+@media (max-width: 1000px) {
+    .storyContainer {
+        display: block;
+    }
+}
+
+/*
+-----------------------------------------------------------------
+This is for the weather page content
+*/
 #weatherDataContainer {
     width: 82%;
     display: block;
@@ -185,10 +244,10 @@
     margin: 50px auto auto auto;
 }
 
-.center {
-    text-align: center;
-}
-
+/*
+-----------------------------------------------------------------
+This is for the holiday page content
+*/
 .dayContainer {
     display: flex;
     justify-content: center;
@@ -216,5 +275,12 @@
 
 .monthName {
     text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .dayContainer {
+        display: block;
+        margin: auto;
+    }
 }
 

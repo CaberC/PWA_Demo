@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Buttons (That are really div elements.)
     const homeButton = document.getElementById("homeContainer")
     const newsButton = document.getElementById("newsContainer")
     const weatherButton = document.getElementById("weatherContainer")
     const holidayButton = document.getElementById("holidayContainer")
 
+    // Event listeners for the aforementioned buttons (That aren't really buttons.)
     homeButton.addEventListener('click', loadHomePage)
     newsButton.addEventListener('click', loadNewsPage)
     weatherButton.addEventListener('click', loadWeatherPage)
     holidayButton.addEventListener('click', loadHolidayPage)
 
+    // This is the div that contains all of the page elements that are swicthed
+    // in and out via the nav menu.
     const pageContentContainer = document.getElementById("pageContentContainer")
 
+    // Each content block that can be loaded in and out has its own loading function
+    // that is named with the convention: "load${name}page() {}""
     function loadHomePage() {
+
         pageContentContainer.innerHTML = `
 
         <div id="pageContentContainer">
@@ -43,8 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
         
         `
+
     }
 
+    // This function loads the news page
     function loadNewsPage() {
 
         //API Docs: https://www.thenewsapi.com/documentation
@@ -56,10 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
         function displayNews(response) {
             //alert(response["data"][0]["title"])
             const newsStories = response["data"]
-            const newsContainer = document.getElementById("pageContentContainer")
-            newsContainer.innerHTML = ``
+            pageContentContainer.innerHTML = ``
             for (let i=0; i<6; i++) {
-                newsContainer.innerHTML += `
+                pageContentContainer.innerHTML += `
                 <div class="storyContainer">
                     <div class="imageContainer">
                         <img class="newsStoryImage" src="${newsStories[i]["image_url"]}" alt="Image associated with news story">
@@ -77,12 +85,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+    // I wonder what this function loads???
     function loadWeatherPage() {
 
         setTimeout(() => {
 
-            const dataContainer = document.getElementById("pageContentContainer")
-            dataContainer.innerHTML = ``
+            pageContentContainer.innerHTML = ``
 
             function fetchWeatherData(location) {
                 fetch(`http://api.weatherstack.com/current?access_key=97d15e7c90db23a58c0bc6437a507d1f&query=${location}`)
@@ -93,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
             function displayWeather(response) {
                 // https://weatherstack.com/documentation <-- for API documention
                 const weatherData = response["current"]
-                dataContainer.innerHTML += `
+                pageContentContainer.innerHTML += `
                     <style src="style/weatherPage.css"></style>
                     <div class="locationSpecificDataContainer spaceTopways">
                         <div class="topHalf">
@@ -166,15 +174,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+    // This function was such a pain to make
     function loadHolidayPage() {
 
+        // First, we need all the month names as well as how many days are in each month in order.
         const monthNames = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         const monthLenghts =[31,28,31,30,31,30,31,31,30,31,30,31]
-        const calendarContainer = document.getElementById("pageContentContainer")
-        calendarContainer.innerHTML = ``
+        pageContentContainer.innerHTML = ``
         
         for (let i = 0; i < monthNames.length; i++) {
-            calendarContainer.innerHTML += `
+            pageContentContainer.innerHTML += `
             <div class=monthContainer>
                 <div class=""monthNameContainer">
                     <h2 class="monthName font blue">${monthNames[i]}</h2>
