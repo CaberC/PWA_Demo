@@ -163,11 +163,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 `
             }
-            
-            const locations = [59718, 59714, 59716]
-            locations.forEach(function(location) {
-                fetchWeatherData(location)
-            })
+
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                var lat = position.coords.latitude 
+                var lon = position.coords.longitude
+                var location = lat.toString() + "," + lon.toString()
+                fetchWeatherData(location);
+            });
+
 
         }, 2000);
 
